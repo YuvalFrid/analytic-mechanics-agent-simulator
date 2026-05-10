@@ -20,8 +20,7 @@ class EquationsOfMotion:
     question_type: str
     parameters: Dict[str,Optional[float]]
     lagrange_equation: Optional[str]
-    hamilton_dx_equation: Optional[str]
-    hamilton_dp_equation: Optional[str]
+    hamilton_equation: Optional[str]
 
 @dataclass
 class InspectorReport:
