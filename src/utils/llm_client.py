@@ -41,3 +41,19 @@ def call_llm(system_prompt: str, user_prompt: str, model: str, image_path: str =
         print(f"LLM returned invalid JSON: {e}")
         print(f"Raw response was: {raw}")
         return None
+
+
+def call_llm_raw(system_prompt: str, user_prompt: str, model: str) -> str:
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ]
+        )
+    except Exception as e:
+        print(f"API call failed: {e}")
+        return None
+    
+    return response.choices[0].message.content

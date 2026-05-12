@@ -5,7 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 from src.models.schema import ProblemDescription
 from src.utils.llm_client import call_llm
 
-MODEL = "gpt-4o"
+MODEL = "gpt-4o-mini"
 
 SYSTEM_PROMPT = """
 Your job is to parse 1D Hamiltonian and Lagrangian mechanics problems.
